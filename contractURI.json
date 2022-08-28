@@ -3,6 +3,6 @@
   "description": "kasoqian test",
   "image": "https://img1.baidu.com/it/u=1624676498,3671459173&fm=253&fmt=auto&app=138&f=JPEG?w=667&h=500",
   "external_link": "baidu.com",
-  "seller_fee_basis_points": 1000, 
-  "fee_recipient": "0xDc8611873fab19209f8845714a02eD17e287aB7C"
+  "seller_fee_basis_points": 250, 
+  "fee_recipient": "0xA9f5422AC2454327f81503B65a3058b77Ad39545"
 }
