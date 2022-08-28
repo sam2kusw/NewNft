@@ -6,20 +6,20 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract XVVD is ERC721URIStorage {
+contract mythicalbeast is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds; 
 
     address owner;
 
-    uint MintMaxTotal = 300;
+    uint MintMaxTotal = 100;
     uint MintMaxcount = 3;
     uint MintMinCount = 1;
 
-    uint MintOneCost = 0.08 ether;
+    uint MintOneCost = 0.06 ether;
 
     
-    constructor() ERC721("cheers pals","cp"){
+    constructor() ERC721("mythical beast","MBT"){
         owner = msg.sender;
         _tokenIds.increment();
     }
@@ -27,9 +27,9 @@ contract XVVD is ERC721URIStorage {
     function mint(address player) private returns (uint256){
         require(IsMinting,"Stop Mint!");
         uint256 newItemId = _tokenIds.current();
-        string memory tokenURI =getTokenURI(newItemId);
+        string memory tokenURI = getTokenURI(newItemId);
         require(MintMaxTotal >= newItemId,"Max overflow!");
-        _mint(player,newItemId)
+        _mint(player,newItemId);
         _setTokenURI(newItemId,tokenURI);
         _tokenIds.increment();
         return newItemId;
@@ -76,7 +76,7 @@ contract XVVD is ERC721URIStorage {
         // 怎么找URI
         string memory IndexString = Strings.toString(index);
         string
-            memory headerString = "https://raw.githubusercontent.com/sam2kusw/NewNft/main/metadata/json"
+            memory headerString = "https://raw.githubusercontent.com/sam2kusw/NewNft/main/metadata/json/"
         string memory footerString = ".json";
         string memory tokenURI = string.concat(
             headerString,
